@@ -1,0 +1,17 @@
+{
+  "ru": {
+    "translation": {
+      "Section": "privet"
+    }
+  },
+  "en": {
+    "translation": {
+      "Section": "Hello"
+    }
+  },
+  "uz": {
+    "translation": {
+      "Section": "salom"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect, Fragment } from "react";
+import CurrencyRates from '../../config/CurrencyRates.jsx';
 import { FaSun, FaMoon} from "react-icons/fa";
 import { IoIosLogIn} from "react-icons/io";
 import { IoPersonOutline } from "react-icons/io5";
@@ -130,19 +131,19 @@ export function Header() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+  
 
   return (
     <>
     <div>
-      {/* Navbar img */}
-      <div className="relative flex justify-center items-center h-28 bg-cover bg-center" style={{ backgroundImage: `url(${NavBg})` }}>
-        <h1 className="absolute text-[50px] font-bold text-blue-400 text-shadow-lg font-mono">SANOAT PORTALI</h1>
-      </div>
+      
       <div> 
         {/* Logo navbar */}
         <div className="flex justify-between items-center py-3 px-4">
-          <div className="w-40"><img className="w-full" src={Logo} alt="" /></div>
+
           <div className="text-xl lg:text-3xl xl:text-4xl font-semibold text-center text-indigo-500">{time}</div>
+          {/* Valyuta kursini joyi */}
+          <CurrencyRates />
           <div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button
@@ -206,6 +207,13 @@ export function Header() {
               </div>
           </div>
         </div>
+        {/* Navbar img */}
+      <div className="bg-cover bg-center" style={{ backgroundImage: `url(${NavBg})` }}>
+        <div className="relative justify-center items-center flexh-28  bg-blue-500 bg-opacity-50 p-8 rounded-lg">
+          <div className="w-40"><img className="w-full" src={Logo} alt="" /></div>
+          <h1 className="absolute text-[50px] font-bold text-white text-shadow-lg font-mono top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">SANOAT PORTALI</h1>
+        </div>
+      </div>
         {/* navbar */}
         <div>
         <Disclosure as="nav" className="bg-white dark:bg-gray-900">

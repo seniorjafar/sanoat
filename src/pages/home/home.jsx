@@ -6,6 +6,8 @@ import Icon from "../../assets/icon/text.svg";
 import Safari from "../../assets/image/safari.jpeg";
 import Moon from "../../assets/image/moon.jpeg";
 import Wood from "../../assets/image/wood.jpeg";
+// import { Sidebar } from '../../Layout/sidebar/index';
+
 
 const theme = {
   carousel: {
@@ -196,7 +198,7 @@ export const Home = () => {
             ))}
         </Carousel>
       </section>
-
+      {/* <Sidebar/> */}
       {/* hero */}
       <section className='container-xl xl:flex justify-between'>
         {heros.map((hero, i) => (

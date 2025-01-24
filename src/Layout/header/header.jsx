@@ -131,7 +131,16 @@ export function Header() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-  
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -275,13 +284,53 @@ export function Header() {
               </div>
             </div>
             <div className="flex rounded-md shadow-sm" role="group">
-              <button type="button" className="items-center px-4 py-2 text-sm font-normal text-gray-900 bg-transparent border border-gray-900 rounded-s-lg hover:bg-gray-900 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-              <IoPersonOutline />
-              </button>
-              <button type="button" className="items-center px-2 py-2 text-sm font-normal text-gray-900 bg-transparent border border-gray-900 rounded-e-lg hover:bg-gray-900 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-              <IoIosLogIn />
-              </button>
-            </div>
+            <button onClick={handleOpenModal} type="button" className="items-center px-4 py-2 text-sm font-normal text-gray-900 bg-transparent border border-gray-900 rounded-s-lg hover:bg-gray-900 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                <IoPersonOutline />
+            </button>
+            <button onClick={handleOpenModal} type="button" className="items-center px-2 py-2 text-sm font-normal text-gray-900 bg-transparent border border-gray-900 rounded-e-lg hover:bg-gray-900 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                <IoIosLogIn />
+            </button>
+            {/* Modal */}
+    {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+          <div className="relative p-4 w-full max-w-md max-h-full">
+            {isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+                    <div className="bg-white dark:bg-gray-900 p-8 rounded-lg">
+                        <h2 className="text-2xl font-semibold mb-4">Sign in to our platform</h2>
+                        <form className="space-y-4" action="#">
+                            <div>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+                            </div>
+                            <div>
+                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                            </div>
+                            <div className="flex justify-between">
+                                <div className="flex items-start">
+                                    <div className="flex items-center h-5">
+                                        <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                                    </div>
+                                    <label htmlFor="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                                </div>
+                                <a href="#" className="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                            </div>
+                            <button type="submit" className="w-full text-white bg-indigo-500 hover:bg-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-500">Login to your account</button>
+                            <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                Not registered? <a href="#" className="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                            </div>
+                        </form>
+                        <button onClick={handleCloseModal} className="mt-4 bg-indigo-500 text-white rounded-lg px-4 py-2">Close</button>
+                    </div>
+                </div>
+            )}
+
+            <button onClick={handleOpenModal} className="bg-indigo-500 text-white rounded-lg px-4 py-2">Open Modal</button>
+        </div>
+        </div>
+      )}
+        </div>
 
           </div>
           <Disclosure.Panel className="2xl:hidden">
@@ -309,6 +358,7 @@ export function Header() {
       
 
     </div>
+    
     </>
   );
 }

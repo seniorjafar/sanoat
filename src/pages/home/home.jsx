@@ -171,11 +171,92 @@ export const Home = () => {
     <div className='p-3'>
       {/* language */}
       <h1>{t('Section')}</h1>
-
+      <div className='grid lg:grid-cols-4 gap-4'>
+        {/* Sidebar */}
+    <aside className=" hidden lg:block lg:col-span-1 text-sm 2lg:text-lg h-full transition-transform bg-gray-50 dark:bg-gray-800" aria-label="Sidebar">
+      <div className="h-full px-3 py-4 overflow-y-auto">
+        <ul className="space-y-2 font-medium">
+          <li>
+            <a href="#" className="flex flex-wrap items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="flex-1 ms-3 whitespace-nowrap">Toshkent</span>
+              <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Shahri</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Toshkent</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Fargʻona</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Samarqand</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Qashqadaryo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Andijon</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Namangan</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Surxondaryo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Buxoro</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Xorazm</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Jizzax</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Navoiy</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Sirdaryo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex flex-wrap items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="flex-1 ms-3 whitespace-nowrap">Qoraqalpog`iston</span>
+              <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Respublikasi</span>
+            </a>
+          </li>
+          {/* Add more list items here */}
+        </ul>
+      </div>
+    </aside>
+    <div className='lg:col-span-3'>
       {/* carousel */}
       <section className='container-xl my-4'>
         <Carousel className="rounded-xl h-96" navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+            <div className="absolute bottom-4 left-2/4 z-45 flex -translate-x-2/4 gap-2">
               {new Array(length).fill("").map((_, i) => (
                 <span
                   key={i}
@@ -198,9 +279,8 @@ export const Home = () => {
             ))}
         </Carousel>
       </section>
-      {/* <Sidebar/> */}
       {/* hero */}
-      <section className='container-xl xl:flex justify-between'>
+      <section className='container-xl xl:flex justify-between lg:block'>
         {heros.map((hero, i) => (
           <Hero key={i} img={hero.img} title={hero.title} text={hero.text} description={hero.description} />
         ))}
@@ -213,11 +293,25 @@ export const Home = () => {
         ))}
       </section>
       <section>
-        
+        <div className='container-xl'>
+          <div className="bg-white dark:bg-gray-900">
+              <div className="gap-16 items-center py-8 max-w-screen-xl xl:grid xl:grid-cols-2">
+                  <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                      <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-indigo-500 dark:text-white">We didn`t reinvent the wheel</h2>
+                      <p className="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+                      <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 mt-8">
+                      <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
+                      <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
+                  </div>
+              </div>
+          </div>
+        </div>
       </section>
-
+    </div>
         
-      
+      </div>
     </div>
   );
 };

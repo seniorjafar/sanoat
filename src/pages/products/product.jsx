@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import Img from "../../assets/image/kub.jpeg";
 
@@ -73,8 +73,91 @@ export const Products = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container-xl p-3">
-      {/* Products grid */}
+    <div className="container mx-auto max-w-full p-3">
+  <div className='grid grid-cols-4 gap-4'>
+    {/* Sidebar */}
+    <aside className="col-span-1 sm:col-span-1 h-full transition-transform bg-gray-50 dark:bg-gray-800" aria-label="Sidebar">
+      <div className="h-full px-3 py-4 overflow-y-auto">
+        <ul className="space-y-2 font-medium">
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="flex-1 ms-3 whitespace-nowrap">Toshkent</span>
+              <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Shahri</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Toshkent</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Fargʻona</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Samarqand</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Qashqadaryo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Andijon</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Namangan</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Surxondaryo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Buxoro</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Xorazm</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Jizzax</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Navoiy</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="ms-3">Sirdaryo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <span className="flex-1 ms-3 whitespace-nowrap">Qoraqalpog`iston</span>
+              <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Respublikasi</span>
+            </a>
+          </li>
+          {/* Add more list items here */}
+        </ul>
+      </div>
+    </aside>
+
+    {/* Cards */}
+    <div className='col-span-3 sm:col-span-3'>
       <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {currentItems.map((product) => (
           <ProductCard key={product.id} img={product.img} title={product.title} price={product.price} />
@@ -140,5 +223,9 @@ export const Products = () => {
         </div>
       </section>
     </div>
+  </div>
+  {/* Products grid */}
+</div>
+
   );
 };

@@ -54,7 +54,7 @@ const navigation = [
 
   ]},
   { name: 'Klasterlar', href: '/contact', current: false, dropdown: [
-    { name: 'Qoraqalpog‘iston', href: '/downloads' },
+    { name: 'Qoraqalpog‘iston', href: '/contact' },
     { name: 'Andijon', href: '/downloads' },
     { name: 'Buxoro', href: '/downloads' },
     { name: 'Jizzax', href: '/downloads' },

@@ -2,6 +2,7 @@ import React from 'react'
 import { Header } from '../../Layout/header'
 import { Footer } from '../../Layout/footer'
 import { Outlet } from 'react-router-dom'
+import LoadingComponent from '../../loading/loading';
 // import { Sidebar } from '../sidebar/index';
    export const MainLayout = () => {
   return (
@@ -9,7 +10,7 @@ import { Outlet } from 'react-router-dom'
       <header className='max-w-screen-3xl mx-auto'>
         <Header />
       </header>
-
+      <LoadingComponent />
       <main className='max-w-screen-3xl mx-auto'>
         {/* <Sidebar /> */}
         <Outlet />
